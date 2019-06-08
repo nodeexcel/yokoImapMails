@@ -88,7 +88,7 @@ let processSentBox = (imapData) => {
         try {
             self.createImapConnection(imapData).then(async (imap) => {
                 imap.once("ready", async function () {
-                    self.openImapInbox(imap).then((response) => {
+                    self.openImapSentBox(imap).then((response) => {
                         var delay = 24 * 3600 * 1000;
                         var yesterday = new Date();
                         yesterday.setTime(Date.now() - delay);
